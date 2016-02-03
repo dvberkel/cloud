@@ -2,12 +2,17 @@
 %%Title: Cloud
 %%EndComments
 %%BeginSetup
+
+/initialize {
+    72 25.4 div dup scale
+} def
+
 %%EndSetup
 %%Page 1 1
 
 save /clean-slate exch def
 
-72 25.4 div dup scale
+initialize
 
 0 0 moveto
 210 297 lineto
