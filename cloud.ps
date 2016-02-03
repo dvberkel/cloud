@@ -7,6 +7,25 @@
     72 25.4 div dup scale
 } def
 
+/cloud {
+    3 dict begin
+    /size exch def
+    /y exch def
+    /x exch def
+    gsave
+    x size 2 div add y translate
+    0 0 moveto
+    size 3 2 div mul 0 size size 3 sqrt 2 div mul size 3 sqrt 6 div mul arct
+    size size 3 sqrt 2 div mul size 2 div 0 size 3 sqrt 6 div mul arct
+    size 2 div size 3 sqrt 4 div mul size 4 div 0 180 arc
+    0 size 3 sqrt 2 div mul size 2 div neg 0 size 3 sqrt 6 div mul arct
+    size 2 div neg 0 0 0 size 3 sqrt 6 div mul arct
+    closepath
+    stroke
+    grestore
+    end
+} def
+
 %%EndSetup
 %%Page 1 1
 
@@ -14,10 +33,11 @@ save /clean-slate exch def
 
 initialize
 
-0 0 moveto
-210 297 lineto
-stroke
+20 /x exch def
+20 /y exch def
+100 /size exch def
 
+0 20 210 2 div cloud
 showpage
 
 clean-slate restore
